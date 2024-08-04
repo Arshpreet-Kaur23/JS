@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Generator</title>
+    <style>
+        .full{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        .box{
+            background-color: beige;
+            width: 40%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="full">
+        <div class="box">
+            <h1>BMI Calculator</h1>
+            <label for="heightbox">Heights(in cm)</label>
+            <input type="number" id="heightbox">
+            <br/>
+            <label for="weightbox">Weight(in kg)</label>
+            <input type="number" id="weightbox">
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="submit" onclick="calculate()">Calculate</button>
+            <p id="bmi"></p>
+        </div>
+    </div>
+    <script>
+        function calculate(){
+            const height = document.getElementById("heightbox").value;
+            const weight = document.getElementById("weightbox").value;
+            const bmi = document.getElementById("bmi");
+            const value = (weight)/(height*height);
+            bmi.innerText = value;
+        }
+    </script>
+</body>
+</html>
