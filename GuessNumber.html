@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess number</title>
+    <style>
+        .box{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Guess the Number In Range 1-10</h1>
+        <button type="submit" onclick="clickhere()">Enter your Number</button>
+        <br>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        function clickhere(){
+            let num = Math.floor(Math.random()*10);
+            console.log(num);
+            const feedback = document.getElementById("feedback");
+            let number = parseInt(prompt("Enter your number",""));
+            if(number==null){
+                feedback.innerText = "Please Enter the Number"
+            }
+            else if(number === num){
+                feedback.innerText = "Great! you entered the correct number"
+            }
+            else if(number>num){
+                feedback,innerText = "Oops! you guessed a bigger number"
+            }
+            else{
+                feedback.innerText = "Oops! you guessed a smaller number"
+            }
+        }
+    </script>
+</body>
+</html>
